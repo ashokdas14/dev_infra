@@ -6,9 +6,10 @@ pipeline {
     stages {
 	stage('Git Checkout'){
             steps{
-            git branch: 'main', url: 'https://github.com/ashokdas14/simple-node-js-react-npm-app.git'
+            git branch: 'main', url: 'https://github.com/ashokdas14/dev_infra.git'
             }
         }
+		
 	stage('Terraform'){
             steps{
             sh 'terraform init'
@@ -21,7 +22,7 @@ pipeline {
             input "Deploy Infra?"
             }
         }
-        stage('Terraform Apply'){
+    stage('Terraform Apply'){
             steps{
             sh 'terraform apply --auto-approve';
             }
