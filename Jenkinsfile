@@ -9,7 +9,6 @@ pipeline {
             git branch: 'main', url: 'https://github.com/ashokdas14/dev_infra.git'
             }
         }
-		
 	stage('Terraform'){
             steps{
             sh 'terraform init'
